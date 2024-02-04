@@ -1,0 +1,46 @@
+Here is a step-by-step guide for installing VirtualBox and CentOS on a virtual machine:
+Installing VirtualBox:
+1. Download VirtualBox:
+* Navigate to the https://www.virtualbox.org/wiki/Downloads page.
+* Choose the appropriate version for your host operating system (e.g., Windows, macOS, Linux).
+* Download the installer package.
+2. Install VirtualBox
+* Run the installer package.
+* Follow the on-screen instructions to complete the installation process.
+* Ensure that you also install the "VirtualBox Extension Pack" during the installation.
+3. Launch VirtualBox
+* Open VirtualBox after the installation is complete.
+Installing CentOS Image:
+1. Download CentOS ISO:
+* Go to the https://centos.mirror.net.in/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso page.
+* Choose the desired CentOS version and download the ISO image.
+2. Create a New Virtual Machine:
+* Open VirtualBox.
+* Click on "New" to create a new virtual machine.
+* Name your virtual machine and select "Linux" as the type and "Red Hat (64-bit)" as the version.
+3. Configure Memory:
+* Allocate an appropriate amount of memory for the virtual machine. (Recommended: 2048 MB or higher)
+4. Create a Virtual Hard Disk:
+* Choose to create a virtual hard disk now.
+* Select the hard disk file type and choose dynamically allocated or fixed size, depending on your preference.
+5. Set Virtual Hard Disk Size:
+* Allocate sufficient storage space for the virtual hard disk. (Recommended: 20 GB or more)
+6. Mount CentOS ISO:
+* With the virtual machine selected, click on "Settings."
+* Go to the "Storage" tab.
+* Under the "Controller: IDE" section, click on the empty disk icon next to "Controller: IDE."
+* Choose "Add Optical Drive" and select the CentOS ISO you downloaded.
+7. Start the Virtual Machine:
+* Select your virtual machine in VirtualBox and click on "Start."
+* The CentOS installation process should begin.
+8. Install CentOS:
+* Follow the on-screen instructions to install CentOS.
+* Choose language, time zone, and create a user during the installation.
+9. Complete Installation:
+* Once the installation is complete, eject the ISO from the virtual optical drive.
+* Restart the virtual machine.
+10. Post-Installation Setup:
+* Log in to CentOS with the credentials you created during the installation.
+* Now you have successfully installed VirtualBox and set up a CentOS virtual machine. Adjust the settings and configurations based on your specific requirements.
+Top of Form
+
