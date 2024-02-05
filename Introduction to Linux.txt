@@ -1,0 +1,36 @@
+                                                            Introduction to Linux
+                                                       __________________________________
+                                             
+
+1. History:
+__________________________________________________________________________________________________________________________________________
+
+ Linux, developed by Linus Torvalds in 1991, is an open-source Unix-like operating system.
+
+ Originating from the Unix design principles, Linux has evolved collaboratively through community contributions.
+
+__________________________________________________________________________________________________________________________________________
+
+2. Advantages:
+__________________________________________________________________________________________________________________________________________
+
+Open-source nature allows users to modify, distribute, and enhance the source code freely.
+
+Robust security features, stability, and scalability make Linux popular for servers, embedded systems, and desktops.
+__________________________________________________________________________________________________________________________________________
+
+3. Architecture:
+__________________________________________________________________________________________________________________________________________
+
+Hardware: Linux supports various hardware architectures, ensuring compatibility with diverse devices.
+
+Kernel: The core component, managing system resources and facilitating communication between hardware and software.
+
+Shell: Interface between users and the kernel, executing commands and managing processes.
+
+Application: Software programs that run on Linux, catering to a wide range of user needs.
+
+User: Individuals interacting with the system through the shell, executing commands and utilizing applications.
+
+
+
