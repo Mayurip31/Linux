@@ -1,0 +1,171 @@
+                                                            Editors in Linux
+                                                          ______________________
+
+
+Editors are used to create new files, and edit or modify the content inside it. 
+
+Simply editors are used to read and write data in existing or newly created file. 
+
+Editors can be classified on the basis of interfaces that they use, i.e. Graphical Editors and Command Line Editors.
+
+Graphical editor:
+_____________________
+
+Graphical editor uses graphical user interface. It is easy to use but consumes more memory than command line editors. In Linux, following are some well-known graphical editors,
+
+1. gedit: - It is same as that of notepad in windows. You can open gedit graphically in application menu and also using command as $gedit.
+
+2. kedit: - It is similar to gedit but contain some advance features. Generally, we have to install kedit separately to use it.
+
+3. Open office: - Open Office is same as that of MS Office. This Open Office is specially developed for Linux based operating systems.
+
+Command line editor:
+
+Command line editor uses command line interface. 
+
+These editors are much master and consumes less memory than any graphical editors. 
+
+Following are some well-known command line editors,
+
+1. nano: - nano editor is easy to use since it provides simple features to edit data from files.
+
+Syntax-
+# nano <filename>.<extension>
+
+2. pico: - 
+
+Syntax-
+# pico <filename>
+
+3. vi and vim: - 
+
+vi (virtual interface) and vim (virtual interface modified) are most commonly used editors. 
+
+vi and vim both editors are same where as vim is the advance version of vi editor. 
+
+Thus, it contains some additional features. 
+
+These editors works in four different modes,
+
+ Insert mode
+ Ex-mode
+ Command mode
+ Visual mode
+
+Syntax-
+# vim <filename>
+
+Command Mode
+
+This is default mode. 
+
+Press esc to exit from any mode and enter into command mode.
+
+# dd              Delete current line
+
+# <n>dd           Delete n no. of lines from current line
+
+# dw              Delete current word
+
+# <n>dw           Delete n no. of words from current word
+
+# yy              Copy current line
+
+# <n>yy           Copy n no. of lines from current line
+
+# yw              Copy current word
+
+# <n>yw           Copy n no. of words from current word
+
+# cc              Cut current line and enter in insert mode
+
+# <n>cc           Cut n no. of lines and enter in insert mode
+
+# cw              Cut current word and enter in insert mode
+
+# <n>cw           Cut n no. of words from current word and enter in insert mode
+
+# p               Paste
+
+# s               Remove current character and enter in insert mode
+
+# S               Remove current line and enter in insert mode
+
+# u               Undo
+
+# Ctrl+r          Redo
+
+# gg              Move cursor at the beginning
+
+#<n>gg            Move cursor at nth line
+
+#/<word>          Search particular word/string/character
+
+# n               Show next search result
+
+# N               Show previous search result.
+
+
+Insert Mode
+
+Following are commands to enter in insert mode
+
+
+# i               Insert text at current cursor position
+
+#I                Insert text at start of the current line
+
+#a                Insert text just right of the current character
+
+#A                Insert text at end of the current line
+
+#o                Insert new line below the current line
+
+#O                Insert new line above the current line
+
+#r                It replaces single character
+
+#R                Replace multiple characters
+
+
+Ex-mode
+
+Special executing mode,
+
+:q                     Quit without saving
+
+:q!                    Quit without saving forcefully
+
+:w                     Save and stay in file
+
+:wq or :x              Save and quit
+
+:wq!                   Save and quit forcefully
+
+:set nu                Set line numbers
+
+:<n>                   Jump to nth line
+
+:set nonu              Remove line numbers
+
+:/<word>               Highlight word/string/character
+
+:nohl                  Remove highlight
+
+:%s/<old>/<new>/g      Find and replace old word with new word
+
+:!<command>            Execute any command on terminal without leaving editor
+
+
+
+Visual Mode
+
+This mode is used for selection.
+
+v                      Select character by character
+
+V                      Select line by line
+
+ctrl+v                 Select block
+
+y,d,c                  For copy, delete, and cut selected
