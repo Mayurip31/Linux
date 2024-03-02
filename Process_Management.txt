@@ -1,0 +1,150 @@
+***Process Management***
+
+controlling, monitoring, and optimizing the execution of running programs and tasks on the operating system.
+
+Process Types:
+
+Foreground Process ----> A process that runs in the foreground and interacts with the user, taking input from the terminal.
+
+Background Process ---->A process that runs in the background and doesn't require user interaction.
+
+1.Shell Jobs ---> user created
+
+2.doemon or system process
+
+ps ----> Process Status 
+
+p: This option displays information about all processes.
+
+s: This option displays information in a structured format.
+
+pid ----> unique process id
+
+tty ----> terminal type of user logged in to
+
+time ----> amount of cpu in min and sec that process has been running
+
+cmd ----> name of the command that lunched the process
+
+#most widely used command 
+
+ps -e or A ----> to see all the running processes 
+
+ps -ef ---> to full format about process
+
+UID: The user ID of the process owner.
+
+PID: The Process ID, a unique identifier for each running process.
+
+PPID: The Parent Process ID, which is the ID of the process that spawned this one.
+
+C: The CPU utilization or utilization of processor time by the process.
+
+STIME: The start time of the process.
+
+TTY: The terminal type associated with the process.
+
+TIME: The total accumulated CPU time used by the process.
+
+CMD: The command and arguments that started the process.
+
+ps -elf ----> process related information status , pod , owner, ppid , ex- screenshot 
+
+F: Flags associated with the process.
+
+S: The process state, such as "R" for running or "S" for sleeping.
+
+PRI: The process's priority.
+
+NI: The nice value, which affects the process's priority.
+
+ADDR: The memory address of the process (used by some display formats).
+
+SZ: The size of the process in memory.
+
+WCHAN: The name of the kernel function where the process is sleeping (if applicable).
+--------------------------------------------------------------------------------------------------------
+
+ps -aux ----> It provides a detailed view of the processes.
+
+%CPU: The percentage of CPU usage by the process.
+
+%MEM: The percentage of physical memory (RAM) used by the process.
+
+VSZ: Virtual memory size in kilobytes (KB) - the total memory the process is using.
+
+RSS: Resident Set Size in kilobytes (KB) - the portion of VSZ that is in physical memory.
+
+S< ----> highest priority
+R+ ----> foreground process
+
+SN -----> low priority
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+jobs ----> the jobs command is used to manage and display information about background jobs running within the current shell session.
+
+
+
+sleep ---> to hold terminal
+
+sleep 300 ---> hold terminal 300 second
+
+jobs ---> to see running condition of job & stop condition of job
+
+& ----> (used at the end of a command line) Starts the command immediately in the background.
+
+ctrl+z ----> to stop shell job b temporarily
+
+ctrl+c ---> to terminate or Can be used to cancel the current interactive job
+
+ctrl+d ---> save & quit
+
+fg job number ----> to foreground process
+bg job number ----> to background process
+---------------------------------------------------------------------------------------------------------------------------------------------
+kill - Terminate a process by its PID.
+
+kill [options] PID
+
+pkill - Signal processes based on their name.
+
+pkill [options] process_name
+
+killall - Signal processes based on their name (similar to pkill).
+
+killall [options] process_name
+
+kill -l - List available signal names and their corresponding numbers.
+
+kill -l
+
+#top ----> Display information about currently running processes.
+
+top or htop ----> Interactive Process Viewer
+
+Real-time system monitoring tool to view and manage processes with dynamic updates and sorting capabilities.
+
+kill ---> Terminate a Process
+
+Terminate a process by specifying its PID. Use kill -9 for a forceful termination if necessary.
+
+killall ----> Kill Processes by Name
+
+Terminate processes by specifying their names.
+
+renice ---> Change Process Priority
+
+Change the priority of a running process by adjusting its nice value.
+
+nice ---> Run a Process with a Modified Priority
+
+Launch a process with a specified priority using nice values
+
+
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+
+***Managing LVM Logical Volumes***
+Logical Volume Management (LVM):
+LVM is a disk management technology used in CentOS and other Linux distributions. It allows for flexible and dynamic management of 
+storage by creating logical volumes from physical storage devices, enabling features like resizing and snapshots.
+
+Initial Disk Preparation:
+
+Identify the disks you want to use for LVM---->/dev/sdb
+
+To create partitions on the disks if they're not already partitioned----->Use fdisk
+
+Initialize Physical Volumes (PV):
+
+pvcreate /dev/sdb1 /dev/sdb2----> to initialize your disk partitions as physical volume.
+
+pvs ----->list of physical volumes.
+
+pvdisplay ------>show details of physical.
+
+Create a Volume Group (VG):
+
+vgcreate myvg /dev/sdb1 /dev/sdb2---->Combine one or more physical volumes into a volume group using the vgcreate.
+
+vgs ----->list of volume.
+
+vgdisplay ------>details of volume.
+
+Create Logical Volumes (LV):
+
+lvcreate -L 10G -n mylv myvg----->To create logical volumes within your volume group.
+
+lvs ----->list of logical volumes
+
+lvdisplay ----->show details of logical volumes.
+
+Create file system:
+
+mkfs.ext4 /dev/myvg/mylv----->the logical volume using a filesystem, e.g., ext4.
+
+Create a mount point directory:
+
+mount /dev/myvg/mylv /mnt---->Mount the logical volume.
+
+Resize Logical Volumes (Advanced):
+
+lvextend -L +2G /dev/myvg/mylv----->resize logical volumes using the lvextend and resize2fs commands.
+resize2fs /dev/myvg/mylv------>resize ext type volumes.
+
+vgextend myvg /dev/sdb3 ------>sdb3 is physical volume added into volume group.
+
+vgeeduce myvg /dev/sdb3----->sdb3 is physical volume reduce from your volume group.
+
+vg rename myvg myvg1----->to rename vg group name.
+
+Reduce volumes using LVM.
+
+To reduce logical volumes, first unmounts the logical volume and clear processes if any running on 
+that partition. Reduction is possible only in extended type of file system
+
+umount /dev/vg_demo/lv1---->unmount l
+
+fsck.ext4 –f /dev/myvg/lv1---->clear processes.
+
+e2fsck –f /dev/myvg/lv1---->if error occur for above command.
+
+lvreduce –L -50M /dev/myvg/lv1----->reduce logical.
+
+Remove volumes using LVM:
+
+lvremove /dev/myvg/lv1----->remove logical volume.
+
+vgremove myvg----->remove volume group when all lv remove.
+
+pvremove /dev/sdb1------>remove physical volume when all vg remove.
+
+
+
+
+
+

@@ -1,0 +1,115 @@
+***PARTITION***
+"It is a way to divide a physical storage device, such as a hard drive or SSD"
+the two main types of partitions
+
+two different types of interfaces used for connecting storage devices, such as hard drives and optical drives.
+
+SATA (Serial Advanced Technology Attachment)
+PATA (Parallel Advanced Technology Attachment)
+
+SATA                                 PATA
+currently use                      outdated
+fast                               slower 
+speeds up to 6 Gbps                maximum transfer rate for PATA is 133 MB/s 
+thinner and more flexible cables   wider and less flexible ribbon cables 
+consume less power                 onsume more power 
+
+MBR (Master Boot Record) 3 primary and 1 extended--> we can use 60 partition in extended or 4 primary
+MBR is like an address book for your computer's hard drive.
+MBR is older and has limitations, like supporting only up to 2.2TB of storage and having a limit of four partitions.
+We use MBR on older computers with BIOS to boot the operating system.
+
+GPT (GUID Partition Table)
+GPT is a modern and improved version of MBR.
+It's like a more organized and spacious address book for your hard drive.
+GPT can handle much larger hard drives (more than 2.2TB) and allows for more partitions,
+ so you can have lots of sections on your drive.
+
+MBR and GPT are ways to keep your computer's hard drive organized and tell it where to find the operating system.
+
+1.vertual box ---> setting----> storage----> sata---> ---.add hard disc ----> create hard disc    
+
+lsblk---->Lists all available block devices (including partitions) and their sizes.
+
+fdisk -l---->Displays the partition table for all disks on the system, 
+showing the sizes and types of partitions.
+
+primary partition
+extende partition
+
+fdisk utility to create a new partition on the specified disk. 
+
+Follow the prompts to create the partition, specifying its size and type.
+fdisk /dev/sdX-----> (replace X with the appropriate disk letter)
+-m----> for help
+-n---->to request new partition and give values of requesting fields.
+p---> for primary
+e---> for extended 
+w----> for save and exit
+d --->d command is used to delete
+
+t--->for change system id.
+L----> Hex code (type L to list all codes)
+
+partprobe---->
+
+blkid-----> to check file system.
+
+mkfs---> for adding file system.
+
+mkfs.ext4 /dev/sdXY (replace X and Y with the appropriate disk and partition numbers)
+
+df -hT---->	
+df---->Stands for "disk free
+-h---->human-readable.
+-T---->print filesystem type.
+
+mount /dev/sdXY /mnt/mountpoint (replace X, Y, and /mnt/mountpoint----->for temporary 
+umount /dev/sdxy /mnt---> for unmount.
+
+vim /etc/fstab---->for permanent
+
+mount -a ---> for refresh mount point
+partprobe----> to refresh mount point.
+
+/dev/sdb   /mnt    ext4 default 0 0
+
+/dev/sdb1          /dir._name         ext4            defaults       0          0
+<Partition_name>  <Mount_point>  <filesystem_type>   <permissions>  <dumps> <priorities>
+
+1.Filesystem---->This field shows the device.
+
+2.Type---->The type field indicates the filesystem type.
+
+3.Options-->it isusedfor control permissions.
+
+4.Dump---->The dump field specifies whether the filesystem should be backed up by the dump command. A value of 0 means no backup is performed, 
+while a value of 1 or higher indicates that it should be backed up.
+
+5.Pass--->The pass field determines the order in which filesystems are checked during the system's boot process for consistency. 
+A value of 0 means that the filesystem should not be checked. Filesystems with higher pass values are checked later.
+
+
+***Swap partition***
+"swap space in Linux is used when the amount of physical memory is getting full. If the system 
+needs more memory resource and the RAM is full, all inactive pages in memory moved to swap space." 
+
+(swap should not be consider a replacement of RAM).
+
+free or swapon---->To check the current swap usage.
+
+fdisk /dev/sdb----->To create primary or extended partition.
+
+mkswap /dev/sdb1----->Assign swap file system.
+
+swapon /dev/sdb1----->Mount swap partition temporary.
+
+vim /etc/fstab ------>For permanent mount.
+
+/dev/sdb2 swap swap defaults 0 0 ---->Entry for swap partition.
+Mount point should be swap.
+
+swapon---->See swap partitions.
+
+swapoff /dev/sdb1------>unmounts swap partitions.
+

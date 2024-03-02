@@ -1,0 +1,148 @@
+***log_managements***
+
+give you a usual history of everything that has been happening in the heart of a linux operating system.
+recent activity / recent events / notification
+
+port number ---> 514
+
+#rsyslog ----> doemon service
+ls /var/log ----> List log files in the /var/log directory.
+
+messages ----> Contains general system messages, including kernel and system service messages.
+
+secure ----> Stores authentication-related messages, including login attempts and authorization information.
+
+boot.log ----> Records boot-up messages, providing details about system startup.
+
+cron ----> Logs cron job activities and scheduled task executions.
+
+yum.log ----> Logs package management activities, including installations, updates, and removals.
+
+maillog ----> Stores mail server (Postfix or Sendmail) activity and email delivery information.
+
+httpd ----> Contains web server (Apache) access and error logs for web traffic and server issues.
+
+mysql or mariadb ----> Logs related to the MySQL or MariaDB database server.
+
+audit.log ----> Records system audit information, including security-related events and SELinux messages.
+
+wtmp ----> Logs user login and logout information, recording the historical user sessions.
+
+btmp ----> Keeps track of failed login attempts, showing unauthorized login attempts.
+
+lastlog ----> Maintains the information about the last login time for each user.
+
+vim /etc/rsyslog.conf ----> configuration files
+
+journalctl ----> Monitor logs in real-time and process starting perform only running logs
+
+logger dummy ----> we can create dummy logs 
+
+-------------------------------------------------------------------------------------------------------
+
+# centralized log server
+
+Centralized logging is a method of collecting and managing log data from multiple sources to a single server, which simplifies log analysis and 
+troubleshooting.
+
+yum install rsyslog ---->  to install rsyslog
+
+systemctl status rsyslog 
+
+systemctl start rsyslog 
+
+systemctl enable rsyslog
+
+vim /etc/rsyslog.conf -----> server
+
+uncomment line number (remove #) ----> 19
+                                       20
+
+$template templAuth,"/var/log/%HOSTNAME%/PROGRAMNAME%.log"
+*.* ?templAuth
+
+systemctl restart rsyslog
+
+firewall-cmd --add-port=514/tcp --permanent
+firewall-cmd --reload
+
+-----------------------------------------------------------------------------------------------------------------
+#second machine (client ) 
+
+nmtui 
+
+set system hostname ----> client (change host name if same )
+
+vim /etc/rsyslog.cong
+
+end of the page 
+
+add new line below line number 90
+
+*.* @@10.0.0.10:514 
+
+logger dummy7 ----> check in servers log 
+
+------------------------------------------------------------------------------------------------------------
+#log_rotation
+
+"Log rotation helps manage log files by compressing, archiving, and deleting older log files to 
+prevent them from consuming too much disk space."
+
+vim /etc/logrotate.conf ----> configuration of log rotation
+
+/etc/logrotate.d ----> libvirtd file typically contains log rotation configurations for the libvirtd service, 
+which is used for managing virtual machines.
+
+weekly ----> Rotates the log files on a weekly basis.
+
+missingok ----> Ignores errors if the log file is missing.
+
+rotate 4 ----> Retains 4 rotated log files.
+
+delaycompress ----> Delays compression of log files until the next rotation.
+
+copytruncate ----> to create a copy of the current log file before rotation and then truncate the original log file. It helps in preserving
+the log file content while allowing new data to be written to it.
+
+minsize 100k ----> sets the minimum size for log rotation to occur. Log files must be at least 100 kilobytes (100k) in size before logrotate 
+will initiate the rotation process. If the log file is smaller, rotation will not take place.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+process ----> 
+
+touch sample.txt ----> make new file
+
+cat libvertd > sample.txt
+
+vim sample.txt 
+
+/root/sample/*.log {
+weekly
+missingok
+rotate 4
+delaycompress
+copytruncate 
+misize 
+}
+
+mkdir /root/sample
+
+echo "log rotation" > file.log
+
+logrotate -f /etc/logrotate.d
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+

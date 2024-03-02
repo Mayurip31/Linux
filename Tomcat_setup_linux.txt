@@ -1,0 +1,33 @@
+***tomcat***
+
+apache tomcat is free & open source web server
+
+it is used to java web application
+
+developed by apache organization
+
+developed by using 'java' programing language.
+
+it runs on 8080 port by default
+
+-----------------------------------------------------------------------------------------------
+download apache-tomcat zip file from firefox
+
+unzip this file with the help of tar command or gzip command 
+
+download template from firefox
+
+unzip template 
+
+move template inance-htm in apache tomcat/webapps 
+
+mv -rvf inance-html apacahe-tomcat/webapps (webapps is root directory of tomcat like /var/www/html)
+
+./apache-tomcat/bin/catalina.sh start ----> to start our tomcat server (bin is script start and stop)
+
+-----------------------------------------------------------------------------------------------------------
+search on firefox ---> ipaddress:8080/template_extracted_directory_name
+                  -----> ipaddress:8080/inance-html
+
+
+

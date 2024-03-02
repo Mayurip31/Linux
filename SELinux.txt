@@ -1,0 +1,83 @@
+***selinux***
+security enhance linux
+
+Discretionary Access Control (DAC)  
+we used rwx permission in pemission
+
+Mandatory Access Control (MAC) 
+defines rules and constraints for the system, specifying what actions are allowed and 
+what is denied for different objects (files, directories, processes, etc.) and subjects (users, processes).
+
+
+vim /etc/selinux/config
+
+mkdir /demo ----> label content apply
+
+ls -Z  ----> show selinux context for file/dir
+
+ls -ldZ ----> for particular directory/file
+
+ls -lZ ----> show content all.
+
+#more_example
+
+ps -eZ | grep bash
+
+id 
+
+-rwxr-xr-x. root root      unconfined_u:      object_r:  admin_home_t:    s0 myfile
+DAC_rules                  selinux_username   role       rule_type        security_level
+
+
+
+1.selinux_username ----> the SELinux user identity that maps to a Linux user account. 
+
+2.role ----> to a set of rules and permissions associated with a user.
+
+3.rule_type ----> refers to the type of SELinux rule being applied. 
+
+4.security_level ----> used to classify data and resources based on their sensitivity and importance.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+#SELinux Modes  ----> means selinux how to work in linux
+
+1.Enforcing ----> In enforcing mode, SELinux actively enforces security policies, 
+denying any actions or operations that violate the defined policies.
+
+2.Permissive ----> Permissive mode allows SELinux to log policy violations but
+ doesn't actively block the actions.
+
+3.Disabled  -----> When SELinux is disabled, it is completely turned off, 
+and no security policies are applied.
+
+getenforce ----> for check mode
+
+sestatus ----> for check status 
+
+setenforce 1 ----> to set enforsing mode temporary
+
+setenforce 0 ----> to set permissive mode.
+
+vim /etc/selinux/config ----> for permanently (for apply reboot)
+
+---------------------------------------------------------------------------------------------
+
+#made configuration
+
+vim /etc/httpd/conf.d/demo.conf
+
+<virtualhost *:80>
+    documentroot /demo
+    servername  localhost
+<directory /demo>
+    require all granted 
+</directory>
+
+
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+***boot processe***
+powered on
+
+server
+
+cpu
+
+BIOS 
+
+MBR ----> check hardware
+
+CRUB
+
+Kernel
+
+------------------------------------------------------------------------------------------------------------
+BIOS----> 
+->basic i/o system
+->first program that execute which is stored in read-only memory of mother board of computer
+->perform post (power-on self-test ) verify the hardware components and peripheral to ensure if computer is working condition.
+->check bootable device like pendrive , hardisk etc.
+->handover control to first sector of device i.e MBR
+
+apart from BIOS , UEFI ( unified extensive firmware interface ) is used
+
+MBR
+master boot record
+512 bytes first sector of any bootable device contains machine code instructions to boot a machine and having following info 
+
+bootloader (446 bytes)
+partition table (64 bytes)
+error checking ( 2 bytes)
+
+it will load the boot loader into the memory and handover to it.
+
+
+GRUB ---> grand unified boot loader
+
+load /boot/grub2/grub.cfg at boot time
+
+at this stage , user will see GUI asking different os or kernel configuration to boot.
+
+once you selected the kernel , it locate the corresponding kernel binary
+
+/boot/vmlinuz-<kernel-version>
+
+main job is to load kernel and initrd/initramfs image into memory
+
+once load kernel in RAM , it passes control to it.
+
+in RHEL7
+
+default boot loader is grub2 
+
+grub is for 86 architecture, it could be different for other arch like intel itanium - ELILO
+
+kernel ----> 
+
+first kernel is loaded into read-only mode 
+
+initramfs/initrd get decompressed and then first loads temporary file system
+
+initrd then detect and load the drivers from temporary file system
+
+mount other partition like lvm, raid etc and umount itself.
+
+once main filesystem is mounted , kernel initialize the first process init/systemd
+
+systemd ----> init system, runlevels (commonly referred to as targets in systemd) are replaced by unit files and targets, 
+making the system's operation more flexible.
+
+Runlevel 0 ----> poweroff
+
+Runlevel 1 ----> single user mode
+
+Runlevel 2 ----> multi user mode
+
+Runlevel ----> multi user mode - networking
+
+Runlevel 3 ----> provide cli mode 
+
+Runlevel 4 ----> future use
+
+Runlevel 5 ----> gui mode (graphical)
+
+Runlevel 6 ----> reboot 
+
+----------------------------------------------------------------------
+
+systemctl get-default
+
+systemctl set-default  target
+

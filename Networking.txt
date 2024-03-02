@@ -1,0 +1,243 @@
+***Networking***
+
+Networking is the practice of connecting computers and other devices to share resources and information. 
+
+Network: A network is a collection of interconnected devices, such as computers, servers, printers, and switches, that can communicate 
+and share resources.
+
+Nodes: Devices in a network are often referred to as nodes. These nodes can be computers, smartphones, servers, routers, or 
+any other device capable of network communication.
+
+Data: In networking, data is the information that devices exchange with each other. Data can be in the form of text, files, images, videos, 
+or any other digital content.
+
+Protocols: Protocols are a set of rules and conventions that govern how data is transmitted and received in a network. 
+Common networking protocols include TCP/IP, HTTP, and DNS.
+
+IP Address: An IP (Internet Protocol) address is a unique numerical label assigned to each device on a network.
+IP addresses are used to identify and locate devices on the internet.
+
+Subnet: A subnet is a range of IP addresses within a network. Subnetting is used to divide a large network into smaller,
+more manageable segments.
+
+Router: A router is a network device that connects different networks together and directs data traffic between them. 
+It also assigns IP addresses within a local network.
+
+Switch: A switch is a device that connects multiple devices within a local network, allowing them to communicate with each other. 
+Switches operate at the data link layer (Layer 2) of the OSI model.
+
+Gateway: A gateway is a device or software that connects two dissimilar networks, allowing data to flow between them. 
+Gateways are often used to connect local networks to the internet.
+
+Firewall: A firewall is a security device or software that monitors and controls incoming and outgoing network traffic. 
+It is used to protect networks from unauthorized access and potential threats.
+
+DNS (Domain Name System): DNS is a system that translates human-readable domain names (e.g., www.example.com) into IP addresses. 
+It is like a phone book for the internet.
+
+Wireless Networking: Wireless networks use radio waves or other wireless technology to connect devices without the need for physical cables. 
+Wi-Fi is a common example of wireless networking.
+
+Bandwidth: Bandwidth refers to the capacity of a network to transmit data. It is usually measured in bits per second (bps)
+ and is a key factor in determining network speed.
+
+Packet: Data is typically broken down into packets for transmission over a network. Each packet contains a portion of the data, 
+along with routing information.
+
+Network Topology: Network topology refers to the physical or logical layout of a network. Common topologies include star, bus, ring, and mesh.
+
+Network Security: Network security involves protecting a network and its data from unauthorized access, attacks, and
+ threats. This includes measures like firewalls, encryption, and authentication.
+first computer network : 
+
+*charecteristics of computer network
+
+1.resource sharing
+
+2.communication speed
+
+3.backup
+
+4.scalability
+
+5.reliability
+
+6.s/w & h/w sharing
+
+7.security
+
+*components:
+Lan cable--->Rj45----->Nic card(provide network) 
+
+Network type:
+1.PAN: personal area network
+range (10m) 
+use for personal use.
+2.LAN : local area network
+range (150m)
+use: office building
+3.MAN : Metropoliton area network
+range ; (50 kM)
+used for city
+4.WAN : wide area network 
+collection of man , lan is called wan.
+use for country all around the world.
+
+OSI model(Open Systems Interconnection)
+
+there are 7 layers of osi model
+
+7.Application---->Provides network services directly to user applications, 
+such as email, web browsers, and file transfer.
+
+6.presentation---->Translates data into a format that can be understood by both sender and receiver, 
+handling data encryption and compression.
+
+5.session---->Manages and controls communication sessions, including establishing, maintaining, and 
+terminating connections.
+
+4.transport------>Ensures end-to-end communication and data integrity, handling flow control and error recovery.
+
+3.network------>Manages routing and logical addressing, allowing data packets to be forwarded between different networks.
+
+2.data link------> Responsible for data framing, error detection, and flow control within a local network segment.
+
+1.physical ----->the physical transmission of data over
+a medium, including specifications for cables, connectors, and signal encoding.
+
+*ARAPANET developed tcp/ip model
+ 
+*tcp/ip protocol
+4.application---->Contains various protocols for specific applications and services, such as HTTP for web browsing, 
+SMTP for email, and FTP for file transfer.
+
+3.transport----->Provides end-to-end communication, data segmentation, flow control, and error checking, 
+including protocols like TCP (reliable) and UDP (unreliable).
+
+2.internet---->Manages logical addressing (IP addresses), routing, and packet forwarding to enable data to traverse different networks.
+
+1.network access---->Handles physical connections to the network, addressing within the local network, and basic data transmission.
+
+Tcp
+a connectionless transport layer protocol that offers low overhead and minimal error handling, making it suitable for real-time, 
+low-latency applications like video streaming and online gaming.
+
+TCP (Transmission Control Protocol)	UDP (User Datagram Protocol)
+Connection-oriented                      Connectionless
+Reliable                                 Unreliable
+Provides flow control                    No inherent flow control
+Detects and retransmits lost             No automatic error detection 
+Slower                                   Faster
+
+Network Devices:
+   hub,switch,bridge,gateway,modem,router,etc.
+
+Hub: An outdated device that broadcasts data to all connected devices within a network.
+
+Switch: Connects devices within a local network, directing traffic based on MAC addresses.
+
+Bridge: Connects two or more network segments and filters traffic based on MAC addresses.
+
+Gateway: Connects networks with different protocols and helps data flow between them.
+
+Modem: Converts digital data from a network to analog signals for transmission over telephone lines (DSL, dial-up) or
+ cable systems (cable modem).
+
+Router: Connects multiple networks, directs data between them, and assigns IP addresses.
+
+An IP address (Internet Protocol address)
+
+a unique numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.
+
+IP addresses serve two primary functions:
+
+1.Identification:
+IP addresses uniquely identify devices on a network. Every device, such as computers, smartphones, routers, and servers, has its own distinct IP address, 
+which allows data to be routed to and from that device. 
+
+2.Location Addressing: IP addresses are used to indicate the location of a device on a network or the internet. They help in directing data packets to the appropriate destination by 
+specifying the source and destination of the data.
+
+adapter:(nic card)
+physical address ---> mac address - 48 bit (hexa decimel code)
+IP addresses come in two primary versions:
+
+1.IPv4 (Internet Protocol version 4): This is the older and more widely used version, represented as four sets of numbers separated by periods 
+IPv4 addresses are 32-bit long and have a limited number of unique addresses, 
+which has led to the adoption of IPv6.
+
+IPv6 (Internet Protocol version 6): This is the newer version designed to overcome the limitations of IPv4. IPv6 addresses are 128-bit 
+long and are represented in hexadecimal format, making them capable of accommodating an exponentially larger number of unique addresses.
+example: 192.168.10.26
+addressing 1.IP Logical 
+           2.MAC Physical
+
+*IP address:                         
+IPV4                                                   IPV6
+lenth 32 bits                                          lenth 128
+octet 4                                                octet 8
+0 to 255                                               0 to FFFF (65535) 4 billion   (  2    )         340 trillion 
+192.168.10.26                
+
+Uses of IP
+         1.Public ip 
+         2.private ip
+        
+*class:(public ip)                                                        
+      
+| Class     | Range               | Number of Addresses |
+|-----------|---------------------|---------------------|
+| Class A   | 0.0.0.0 to 126.0.0.0 |1,67,77,216
+| Class B   | 128.0.0.0 to 191.255.0.0 |65,536 -2
+| Class C   | 192.0.0.0 to 223.255.255.0 |256 -2
+| Class D   | 224.0.0.0 to 239.255.255.0 |(used for multicasting)
+| Class E   | 240.0.0.0 to 255.255.255.0 |(used for research)
+
+private ip
+      
+Class	Starting        IP Address	Ending IP Addres CIDR Notation	 Subnet Mask
+Class A (24-bit)	10.0.0.0	10.255.255.255	 10.0.0.0/8	 255.0.0.0
+Class B (20-bit)	172.16.0.0	172.31.255.255	 172.16.0.0/12	 255.240.0.0
+Class C (16-bit)	192.168.0.0	192.168.255.255	 192.168.0.0/16	 255.255.0.0
+
+  ipaddress 
+    -->Network id (1)
+    --> Host (0) 
+ Octet:-
+       8-8-8-8
+       each octet 8 bits
+       total length 32 bits.
+ class A  |N|H|H|H|
+ class B  |N|N|H|H|
+ class C  |N|N|N|H|
+
+classful ip --->A traditional IP addressing scheme where IP addresses are grouped into predefined classes 
+(A, B, C, D, E) with fixed subnet structures.
+
+classless ip--->A modern IP addressing scheme that allows for flexible subnetting by using variable-length subnet masks, 
+providing efficient use of IP addresses and enabling route aggregation.
+
+network---->2^unstable on bit
+subnet----->
+host------->2^off bit -2 
+
+#nmtui
+
+setting ----> network -----> adapter 2 ----> internal network -----> nmtui -----> edit connection ------> add -----> ethernet ------> 
+profile name <xyz> ------> Device <enp0s8> ----> ipv4 -----> show -----> ipv4 configuration -----> change automatic to mannual -----> addresses 
+add ----> <192.168.0.4 -----> gateway <192.168.0.1> ---> ok ----> activate 
+
+#gui
+system tool ---> setting ----->network---> ipv4---> manual -----> address ----> netmask -----> gateway
+
+#cli
+nmcli connection add con-name (connection name) demo type ethernet ifname eth0s8 ipv4.method manual ipv4.addresses 172.168.0.6 ipv4.gateway 172.32.0.2
+n
+
+nmcli connection show ----->This command will display a list of available network connections.
+
+nmcli connection up <CONNECTION_NAME>--------->Apply the changes to the connection.
+
+
+
+

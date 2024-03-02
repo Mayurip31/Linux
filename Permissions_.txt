@@ -1,0 +1,119 @@
+***permission:
+"permission is like a rule that cotrol who can do what files and folder.they determine whatever you can read,write ,or run a file."
+
+***what is user?
+"interacts with the operating system,processes and accessing files and resources.
+
+***permission:
+1.read--->allows a user to view the contents of a file or directory.
+2.write--->allows a user to modify or create new files within a directory or edit the content of a file.
+3.execute---->permits a user to run a program or script file as a process.
+
+**permission   
+alphabetic charecter     to       Binary(0,1)
+rwx                                111
+rw-                                110
+r-x                                101
+r--                                100
+-wx                                011
+-w-                                010
+--w                                001
+
+***octal number must be(0-7)
+****1 1 1
+    4+2+1=7
+Binary      octal
+001          1
+010          2
+011          3
+100          4
+101          5
+110          6
+111          7
+
+alphabetic charecter  to octal
+--x                    1
+-w-                    2
+-wx                    3
+r--                    4
+r-x                    5
+rw-                    6
+rwx                    7
+
+****
+r-read - 4
+w-write - 2
+e-execute - 1
+
+***default permissin:
+root 1.file = 644  full permission of file 666
+     2.Dir. = 755  full permission of dir 777
+
+local 1.file = 664  full permission of file 666
+     2.Dir. = 775  full permission of dir 777
+
+***umask
+"a command and a file permission mask that determines the default permissions for newly created files and directories"
+
+***for temporary change
+umask 777(change value)
+
+umask is full permission - default permission
+
+vim /etc/profile ---change value permanent
+source /etc/profile
+
+***change mode :
+chmod - is used for changing rwx permission of dir. and file.
+
+syntax--> chmod u/g/o = +-  permission dir.or file
+chmod u+x file name or dir. name ---> give 
+chmod u-x file name or dir. name ---> remove
+
+chmod u+r/w/x  file name or dir. name ---> give
+chmod u+r/w/x  file name or dir. name ---> remove
+
+***give permisssion in octal
+chmod 700 file or dir. name  ---> rwx------.
+
+****change ownership of file
+for check all permission of file and dir.
+ls -l ---> to see all file and dir.permissions.
+ll -d file or dir. name ----> for particular dir.or file permissions.
+
+---> for change owner of file.
+chown username file or dir.name
+chgrp group name file or dir. name
+
+*****special permission:
+suid--->
+sgid---->
+sticky bit--->
+
+1.suid ---> The special permission for the user.---> A file with suid set always executes as the users 
+who owns the file, regarding of the user executing the command.
+
+Shows as 's' or 'S'--->
+chmod u+s /dir or file ----> all user can access file or dir mentioned.
+chmod u+s /sbin/dmidecode ---> all user can run dmidecode command.
+
+2.sgid--->
+
+chmod g+s /dir.name----> apply on dir.--> inherit group name --> group of parent dir. inherit with child dir. and file.
+
+sticky bit--->to prevent unauthorized users from deleting or renaming files within that directory, 
+even if they have write permissions on the directory itself. 
+
+chmod o+t /dir.
+
+
+
+
+
+
+
+
+
+
+
+

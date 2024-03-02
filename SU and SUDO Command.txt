@@ -1,0 +1,42 @@
+***SU and SUDO Command:
+*su ----> substitute user
+*sudo--->superuser do
+
+*What is SUDO?
+"It is a way to temprary grant a user administrative right"
+
+*Backup must required before edit any configuration file.
+
+*Details of sudo is present under ----> /etc/sudoers.
+
+*vim /etc/sudoers
+
+*:set nu ----> line number 101 ----> 
+username     ALL=(ALL)      ALL or permission you want to give to user 
+                            /location
+
+*updatedb 
+
+*use sudo before command everytime
+
+*password required everytime.
+
+*Second option 
+
+*line number 107 
+add %username   ALL=(ALL)   ALL
+
+*updatedb----> required after changes in file.
+
+*required password also.
+
+*If we want no password required
+
+*109 ---->add---->%username ALL=(ALL)   NOPASSWD: ALL 
+*updatedb 
+*su - username 
+*use commnad ----> sudo command name -----> command perform the task without password.
+
+*gpasswd -a username wheel ----> if we any user in wheel group user can grant for administrative rights.
+(no password required)
+

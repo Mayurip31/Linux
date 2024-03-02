@@ -1,0 +1,87 @@
+***SHEDULING***
+"the execution of processes and tasks on a system, 
+ensuring efficient allocation of CPU resources."
+you can automate various processes on your Linux system.
+
+1.Non-periodic--->at (Non-periodic tasks,also known as one-time or non-repeating time.)
+2.Periodic---->cron (Periodic tasks are jobs that are scheduled to run at regular)
+3.Anacron--->desktop
+*Daemon service
+*a daemon service is a background process that runs continuously and provides specific functions or
+ features to the operating system or other applications. 
+*atd
+*crond
+systemctl---->to status,start, stop, enable, or disable  servive name as needed.
+systemctl staus atd---->to check servive status.
+
+*timedatectl---->o view the current time zone.
+*timedatectl set-timezone Asia/Kolkata---->to set the time zone to "Asia/Kolkata" you can run.
+*timedatectl set-ntp true---->you can synchronize the system clock with a time server by running.
+
+
+at--->The at command allows you to schedule one-time tasks to run at a specific time.
+at "08:15"
+>touch /file1
+>mkdir /dir1
+ctl+d----->logout
+
+atq or at -l---->view a list of scheduled 
+atrm job number 3----->To remove a scheduled 
+-atrm 3
+
+***Cron: The cron system is used for recurring task scheduling. 
+It allows you to schedule commands or scripts to run at specified intervals.
+crontab is used for recurring and periodic tasks.
+
+
+
+crontab command.---->the crontab command allows you to create, edit, 
+and manage cron jobs for recurring tasks.
+
+The cron syntax consists of five fields
+1.minute
+2.hour, 
+3.day of the month,
+4.month 
+5.day of the week.
+
+Cron Syntax-----> 0 3 * * * /path/to/my_script.sh
+
+crontab -e
+crontab -l--->To list the contents of your current user's.
+
+Remove crontab Entries:
+crontab -r------>To remove your current user's.
+
+System-Wide cron Jobs:
+
+You can also create system-wide cron jobs by editing the /etc/crontab file.
+
+vim /etc/crontab
+
+<min> <hr> <date> <month>       <week day>
+0:59  0:23  1-31   1-12/jan-dec  0-6/mon-sun(0 or 7 --->for sunday in weekday field)
+
+*crontab -e ----->to provide editors
+*crontab -l ----->to list the job
+*crontab -r ----->to removejob
+*crontab -e -u ---->to edit crontab for specific user
+*crontab -l -u ----->to list crontab for specific user.
+*crontab -r -u ----->to remove crontab for specific user
+
+*crontab guru--->to check online tool
+
+1. setjob for every min.
+*/1 * * * *
+
+2.set job every 17 oct.
+0 0 17 oct *
+
+3.set every sunday 12:15
+15 12 * * sun
+
+4.set job every mon
+* * * * mon
+
+5.set job every 5 min
+*/5 * * * *

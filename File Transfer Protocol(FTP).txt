@@ -1,0 +1,76 @@
+***ftp***
+file transfer protocol (port 20,21)
+
+port 20 ----> 
+
+port 21 ----> 
+
+share file within a network 
+
+the file transfer protocol is a communication protocol used for the transfer of computer
+files between a client and server or a computer network.
+
+server 
+rpm -q vsftpd ----> to check pkg installed or not (very secure file transfer portocol daemon) 
+
+systemctl status vsftpd
+
+systemctl start vsftpd
+
+systemctl enable vsftpd
+
+------------------------------------------------------------------------------------------
+
+#config changes 
+
+/etc/vsftpd/vsftpd.conf
+
+line number 12 
+
+anonymous_enable=NO
+
+line number 83 , 84 ----> uncomment (remove #)
+
+use_localtime=YES ----> end of the page it is optional.
+
+------------------------------------------------------------------------------------
+
+#remote server ftp setup:
+
+start and enable vsftpd service
+systemctl start vsftpd
+
+systemctl enable vsftpd 
+
+stop firewall or allow ftp to firewall
+
+-------------------------------------------------------------------------------------
+
+#client server
+
+install ftp service (if not already)
+
+yum install ftp ----> command
+
+------------------------------------------------------------------------------
+
+#how transfer file
+
+ftp <ip address> 
+
+] ftp ---> user
+
+enter without password
+
+ls ----> we can see content of server /var/ftp -----> content of server 
+
+! ls ----> we can see out of ftp content of client.
+
+>get file_name ----> to get file of created in server
+
+--------------------------------------------------------------------------------
+
+
+
+
+

@@ -1,0 +1,47 @@
+***ssh***
+SSH (Secure Shell) is a network protocol that allows secure remote access and control of a system.(22/tcp port)
+
+#password base authentication
+
+ssh username@remote_server ----> Connect to a remote server
+
+ssh root@10.0.0.10 -----> this is a server ip we can take remote access of server user with the help of ssh command.
+
+password required of server user : 
+
+ctrl + d or exit ----> Close an SSH session
+-----------------------------------------------------------------------------------------------------------------------------
+**scp**
+Copy files securely
+
+#key base authentication 
+
+#server side --->
+
+ssh-keygen ----> Create a new SSH key pair for secure authentication.
+
+enter
+enter
+enter
+
+cd .ssh ---> change the directory
+ls ---> to list content
+
+id_rsa      id_pub
+(private)   (public)
+
+cat id_rsa.pub > authorized_key
+
+chmod 600 authorized_key
+
+scp id_rsa root@<ip addr>:/mnt
+
+#client side
+
+ssh -i id_rsa root@<server ip addr>
+
+
+
+
+
+

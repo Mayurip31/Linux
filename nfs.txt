@@ -1,0 +1,67 @@
+***nfs***
+2049 ----> port number
+
+A network protocol for distributed file system
+
+using this , a user on the client computer can access the files on server side like
+as they are accessing locally.
+
+---------------------------------------------------------------------------------------
+nfs configuration setup 
+
+#server
+
+rpm -q nfs-utils
+
+rpm -q rpcbind
+
+yum list installed | grep nfs-utils
+
+systemctl status nfs,rpcbind             
+
+systemctl start nfs,rpcbind           
+
+systectl enable nfs,rpcbind 
+----------------------------------------------------------------------------------------------               
+firewall-cmd --add-service=nfs 
+
+firewall-cmd --add-service=rpc-bind 
+
+firewall-cmd --add-service=mountd
+
+------------------------------------------------------------------------------------------------
+
+mkdir /cloud
+
+touch /cloud/file{1..5}.txt
+
+setfacl -m u:nfsnobody:rwx /cloud
+
+getfacl /cloud ---> to check acl apply or not
+------------------------------------------------------------------------------------------------
+#modify the /etc/exports file and add new shared file system
+
+vim /etc/exports
+
+/cloud 10.0.0.0/8(rw,sync) ----> required any class range of ip address both server must be in one range.
+
+exportfs -rva ----> for exporting
+
+---------------------------------------------------------------------------------------------------
+
+#client side 
+
+showmount -e 10.0.0.10 ----> server ip
+
+vim /etc/fstab 
+
+10.0.0.10:/cloud /media nfs defauts 0 0
+
+mount -a
+
+df -h ----> we can see mounted dir.
+
+cd /media
+
+touch myfile ----> if we make file on client automatically it is made in server.
+

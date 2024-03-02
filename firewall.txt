@@ -1,0 +1,59 @@
+***firewall***
+
+additional security layer
+
+rpm -q firewalld ----> To check firewall service is installed
+--------------------------------------------------------------------------------------------------------------------
+#To start/stop firewalld serice
+
+systemctl status firewalld ----> To check the status of firewall
+
+systemctl start firewalld ----> To start the firewall
+
+systemctl stop firewalld ----> To stop the firewall
+
+systemctl restart firewalld ----> To restart the firewall
+
+systemctl enable firewalld ----> To enable the firewall to start at boot
+
+systemctl disable firewalld ----> To disable the firewall from starting at boot
+
+firewall-cmd --list-all ----> To check rules of firewall
+--------------------------------------------------------------------------------------------------------------------------
+#Basic Firewall Management
+
+firewall-cmd --get-service ----> listing all the service firewalld is aware of
+
+firewall-cmd --reload ----> To reload the config of firewalld
+
+firewall-cmd --get-zones ----> To list firewall multiple zones
+
+firewall-cmd --get-active-zones ----> To list active zones
+
+firewall-cmd --zones-public --list-all ----> To get firewallrules for specific zones
+-------------------------------------------------------------------------------------------------------------------------
+#To add or remove service
+
+firewall-cmd --add-servive=service_name ----> To add service
+
+firewall-cmd --remove-service=service_name ----> To remove service 
+------------------------------------------------------------------------------------------------------------------
+#To block incomming/outgoing traffic to a ip or url
+
+host -t a www.facebook.com ----> to check ip address
+
+firewall-cmd --direct --add-rule ipv4 filter OUTPUT -d <ip address> -j DROP ----> To block outgoing traffic 
+
+firewall-cmd --add-rich-rules='rule family'="ipv4" sourceaddress="<ip address> reject' ----> To block incomming traffic
+
+firewall-cmd --add-icmp-block-inversion ----> To block ICMP incomming traffic
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+***ACL--->Access Control List.
+"It allows you to give more specific set of permission to a file or directory without changing the base ownership and permissions."
+*It is a higher priority --->+ 
+***Commands---->setfacl & getfacl 
+1.Viewing ACLs----->getfacl /path/to/file_or_directory.
+
+2.Setting ACLs to particular user.---->setfacl -m u:jane:rw /myfile.txt.
+
+3.Grant execute access to a specific group (developers) on a directory.
+--->setfacl -m g:developers:x /path/to/directory
+
+4.Remove an ACL entry for a user (jane) from a file.
+--->setfacl -x u:jane /path/to/file
+
+5.Set a default ACL for a directory (applies to newly created files and directories within that directory):
+---->setfacl -d -m u:jane:rw /path/to/directory
+
+6.Recursively apply ACLs to all files and directories within a directory.
+---->setfacl -R -m u:jane:rw /path/to/directory
+
+7.Remove all ACL entries for a file.
+---->setfacl -b /path/to/file
+
+
+
